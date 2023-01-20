@@ -1,6 +1,6 @@
 function isOneInTheArray(number, index) {
   
-  return "1".includes(number, index);
+  return [0,1,2,3].includes(number, index);
 }
 function populateArrayFromInput(countToInput){
 let outputArray = [];
@@ -12,29 +12,18 @@ return outputArray;
 function beep(countToInput){
 let newOutputArray = [];
 let arrayPopFromInput = populateArrayFromInput(countToInput);
-// arrayPopFromInput.forEach(function(element){
-  
-//   if(isTwoIntheArray(element)){
-//     outputArray.push('"Beep!"');
-//   }
-//   else {
-//     outputArray.push(element);
-//  }
-// });
-// return outputArray;
-for(let i = 0; i <= arrayPopFromInput.length; i++){ 
-  
-  if(isOneInTheArray(i, i))
-    { 
-      newOutputArray.push('"Beep!"');
-    }
-    else 
-    {
-      newOutputArray.push(i);
-    }
+arrayPopFromInput.forEach(function(element) {
 
-}
+  if(element.toString().includes(1)) {
+    newOutputArray.push('"Beep!"');
+  }
+  else {
+    newOutputArray.push(element);
+ }
+});
 return newOutputArray;
+
+
 }
 
 function handleFormSubmission(event) {
