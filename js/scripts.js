@@ -1,38 +1,39 @@
 function populateArrayFromInput(countToInput){
-let outputArray1 = [];
+let outputArray = [];
 for(i = 0; i <= countToInput; i++) {
-    outputArray1.push(i);
+    outputArray.push(i);
 }
-return outputArray1;
+return outputArray;
+}
+
+function isOneIntheArray(number) {
+
+return '1'.includes(number);
+
 }
 
 function beep(countToInput){
-  
+
 let outputArray = [];
+
 let arrayPopFromInput = populateArrayFromInput(countToInput);
   
-for(i = 0; i <= arrayPopFromInput.length -1; i++) {
- 
-  if(arrayPopFromInput[i].includes(1)) 
-  {
-    return true;
-  }
-}
+arrayPopFromInput.forEach(function(element){
   
-  // if(!arrayPopFromInput.includes(1,0)){
-  //     arrayPopFromInput[i] = "Beep!";
-  //     outputArray.push(arrayPopFromInput[i].toString());
-    
-  //   }
-  //   else{
-  //     outputArray.push(i); 
-  //   }
- 
-  // }
+  if(isOneIntheArray(element)){
+    outputArray = "beep!";
 
+    console.log(outputArray);
+  }
+  else {
+     outputArray = outputArray + element.toString();
+  }
+});
 
-
+return outputArray;
 }
+
+
 
 function handleFormSubmission(event) {
   event.preventDefault();
