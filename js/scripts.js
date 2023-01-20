@@ -1,7 +1,3 @@
-function isOneInTheArray(number, index) {
-  
-  return [0,1,2,3].includes(number, index);
-}
 function populateArrayFromInput(countToInput){
 let outputArray = [];
 for(i = 0; i <= countToInput; i++) {
@@ -9,12 +5,19 @@ for(i = 0; i <= countToInput; i++) {
 }
 return outputArray;
 }
-function beep(countToInput){
-let newOutputArray = [];
-let arrayPopFromInput = populateArrayFromInput(countToInput);
-arrayPopFromInput.forEach(function(element) {
 
-  if(element.toString().includes(1)) {
+function beepBoopRoger(countToInput){
+let arrayPopFromInput = populateArrayFromInput(countToInput);
+let newOutputArray = [];
+
+arrayPopFromInput.forEach(function(element) {
+   if(element.toString().includes(3)) {
+    newOutputArray.push('"Won\'\t you be my neighbor?"');
+  }
+  else if(element.toString().includes(2)) {
+    newOutputArray.push('"Beep!"');
+  }
+  else if(element.toString().includes(1)) {
     newOutputArray.push('"Beep!"');
   }
   else {
@@ -22,15 +25,13 @@ arrayPopFromInput.forEach(function(element) {
  }
 });
 return newOutputArray;
-
-
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
   let countToInput = document.getElementById("userInput");
   let paraElement = document.getElementById("results");
-  paraElement.innerText = beep(countToInput.value);
+  paraElement.innerText = beepBoopRoger(countToInput.value);
 }
 
 window.addEventListener("load", function() {
