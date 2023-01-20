@@ -1,13 +1,21 @@
-Describe: beepBoopRoger(number)
+# Mr. Roboger's Neighborhood - Web Application
+Names of contributors: Viradeth Xay-ananh.  
+Web application that takes number from the user, returns list of values from user's input and changes numbers with the value 3, 2, and 1.
 
-Test: "It should return an array from 0 to the user's inputted number replacing number with 1 to string: beep! "
-Code: beepBoopRoger(5);
-Expected Output: [0, "beep", 2, 3, 4, 5]
+## Technologies Used
+* HTML
+* CSS
+* Markup
+* Git
+* Javascript
 
-Test: "It should return array starting from 0 to user's input number replacing numbers with 2 string: boop!"
-Code: beepBoopRoger(5);
-Expected Output: [0, "beep!", "boop!", 3, 4, 5]
+# Complete setup/Installation instructions:
+Clone repository to desktop   
+Navigate to portfolio folder, open index.html  
+[Mr. Roboger's Neighborhood]()  
 
-Test: "It should return array starting from 0 to user's input number replacing numbers with 3 to string: Won't you be my neighbor?"
-Code: beepBoopRoger(5);
-Expected Output: [0, "beep!", "boop!", "Won't you be my neighbor?", 4, 5]
+# Known bugs: 
+No bugs 
+## License
+[MIT](https://opensource.org/licenses/MIT)  
+Copyright (c) _01/20/2023_ _viradeth xay-ananh_
