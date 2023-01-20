@@ -1,36 +1,44 @@
+function populateArrayFromInput(countToInput){
+let outputArray1 = [];
+for(i = 0; i <= countToInput; i++) {
+    outputArray1.push(i);
+}
+return outputArray1;
+}
+
 function beep(countToInput){
-
-
-  
-// var filler = [];
-// for(var i=0; i<5; i++){
-//     filler.push(i); //Example, pushing 5 integers in an array
-// }
-
-//Filler is now equivalent to: [0, 1, 2, 3, 4]
   
 let outputArray = [];
-  for(i = 0; i <= countToInput; i++) {
-    
-    if(i === 1){
-      outputArray.push("Beep!");
-      console.log(outputArray);
-    }
-    else{
-      outputArray.push(i); 
-      console.log(outputArray);
-    }
+let arrayPopFromInput = populateArrayFromInput(countToInput);
+  
+for(i = 0; i <= arrayPopFromInput.length -1; i++) {
  
+  if(arrayPopFromInput[i].includes(1)) 
+  {
+    return true;
   }
-  console.log(outputArray);
-return outputArray;
+}
+  
+  // if(!arrayPopFromInput.includes(1,0)){
+  //     arrayPopFromInput[i] = "Beep!";
+  //     outputArray.push(arrayPopFromInput[i].toString());
+    
+  //   }
+  //   else{
+  //     outputArray.push(i); 
+  //   }
+ 
+  // }
+
+
+
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
   let countToInput = document.getElementById("userInput");
   let paraElement = document.getElementById("results");
-  paraElement.innerText = beep(countToInput.value).sp;
+  paraElement.innerText = beep(countToInput.value);
 }
 
 window.addEventListener("load", function() {
