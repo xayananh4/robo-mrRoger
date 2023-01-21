@@ -8,19 +8,14 @@ function populateArrayFromInput(countToInput) {
 }
 
 //business logic
-function reverseArray(_array) {
-    // let arrayPopFromInput = populateArrayFromInput(countToInput);
-    // let original_array = populateArrayFromInput(countToInput);
+function reverseArray(countToInput) {
+  let arrayPopFromInput = populateArrayFromInput(countToInput);
+  let reversed_array = [];
 
-    let reversed_array = [];
-
-    for (let i = _array.length - 1; i >= 0; i--) {
-        
-        reversed_array.push(original_array[i]);
-    }
-    console.log(reversed_array);
-    return reversed_array.join(" ");
-
+  for (let i = arrayPopFromInput.length - 1; i >= 0; i--) {
+    reversed_array.push(arrayPopFromInput[i]);
+  }
+  return reversed_array.join(" ");
 }
 
 //business logic
@@ -29,7 +24,7 @@ function beepBoopRoger(countToInput) {
   let newOutputArray = [];
 
   if (arrayPopFromInput.length !== 0) {
-    
+
     arrayPopFromInput.forEach(function (element) {
       if (element.toString().includes(3)) {
         newOutputArray.push('"Won\'t you be my neighbor?"');
@@ -46,7 +41,7 @@ function beepBoopRoger(countToInput) {
     });
     return newOutputArray.join(" ");
   }
-  
+
   else {
     return null;
   }
@@ -56,11 +51,9 @@ function beepBoopRoger(countToInput) {
 function reserverFormSubmission() {
   let countToInput = document.getElementById("userInput");
   let reverseResults = reverseArray(countToInput.value);
-  let reverseResultsEelement = document.querySelector("div#reversed");
-
-
-
-    reverseResultsEelement.innerText = reverseResults ;
+  let reverseResultsElement = document.querySelector("div#reversed");
+  reverseResultsElement.removeAttribute("class");
+  reverseResultsElement.innerText = reverseResults;
 
 }
 
@@ -85,8 +78,6 @@ function handleFormSubmission() {
 
 window.addEventListener("load", function () {
   let reverseBtn = document.querySelector("button#reverse");
-  let countToInput = document.getElementById("userInput");
-  
 
   document.querySelector("form#input-form").addEventListener("submit", function (event) {
     handleFormSubmission();
@@ -98,11 +89,8 @@ window.addEventListener("load", function () {
     reverseBtn.removeAttribute("class");
   });
 
-  // Event listener to reverse values when user clicks reverse button
+  // Event listener to reverse results of array values. when user clicks the reverse button
   reverseBtn.addEventListener("click", function () {
-
- 
+    reserverFormSubmission();
   });
-
-
 });
