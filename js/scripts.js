@@ -7,7 +7,7 @@ function populateArrayFromInput(countToInput) {
   return outputArray;
 }
 
-//business logic
+//Business logic
 function reverseArray(countToInput) {
   let arrayPopFromInput = populateArrayFromInput(countToInput);
   let reversed_array = [];
@@ -18,7 +18,7 @@ function reverseArray(countToInput) {
   return reversed_array.join(" ");
 }
 
-//business logic
+//Business logic
 function beepBoopRoger(countToInput) {
   let arrayPopFromInput = populateArrayFromInput(countToInput);
   let newOutputArray = [];
@@ -48,8 +48,7 @@ function beepBoopRoger(countToInput) {
 }
 
 //UI logic
-function reserverFormSubmission() {
-  let countToInput = document.getElementById("userInput");
+function reserverFormSubmission(countToInput) {
   let reverseResults = reverseArray(countToInput.value);
   let reverseResultsElement = document.querySelector("div#reversed");
   reverseResultsElement.removeAttribute("class");
@@ -58,8 +57,7 @@ function reserverFormSubmission() {
 }
 
 //UI logic
-function handleFormSubmission() {
-  let countToInput = document.getElementById("userInput");
+function handleFormSubmission(countToInput) {
   let beepBoopRogerResults = beepBoopRoger(countToInput.value);
   let resultsFromUser = document.querySelector("div#resultsFromUser");
   let errorPassage = document.querySelector("div#error-passage");
@@ -78,9 +76,10 @@ function handleFormSubmission() {
 
 window.addEventListener("load", function () {
   let reverseBtn = document.querySelector("button#reverse");
+  let countToInput = document.getElementById("userInput");
 
   document.querySelector("form#input-form").addEventListener("submit", function (event) {
-    handleFormSubmission();
+    handleFormSubmission(countToInput);
     event.preventDefault();
   });
 
@@ -91,6 +90,6 @@ window.addEventListener("load", function () {
 
   // Event listener to reverse results of array values. when user clicks the reverse button
   reverseBtn.addEventListener("click", function () {
-    reserverFormSubmission();
+    reserverFormSubmission(countToInput);
   });
 });
