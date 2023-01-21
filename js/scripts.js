@@ -51,7 +51,7 @@ function handleFormSubmission(event) {
   
   else
   {
-    document.querySelector("div#error-passage").innerText = "Please enter numbers 0 or higher";
+    document.querySelector("div#error-passage").innerText = "Please enter a higher number!";
   } 
 }
 
