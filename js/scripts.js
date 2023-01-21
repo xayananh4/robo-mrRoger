@@ -46,17 +46,13 @@ function handleFormSubmission(event) {
   
   if(beepBoopRogerResults)
   {
-    resultsFromUser.innerText = beepBoopRogerResults;
+    paraElement.innerText = beepBoopRogerResults;
   }
+  
   else
   {
-    resultsFromUser.setAttribute("class", "defaultSettingHidden");
     document.querySelector("div#error-passage").innerText = "Please enter numbers 0 or higher";
-  }
-
-  
-  
-  
+  } 
 }
 
 window.addEventListener("load", function() {
