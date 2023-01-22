@@ -41,7 +41,6 @@ function beepBoopRoger(countToInput) {
     });
     return newOutputArray.join(" ");
   }
-
   else {
     return null;
   }
@@ -53,7 +52,6 @@ function reserverFormSubmission(countToInput) {
   let reverseResultsElement = document.querySelector("div#reversed");
   reverseResultsElement.removeAttribute("class");
   reverseResultsElement.innerText = reverseResults;
-
 }
 
 //UI logic
@@ -74,6 +72,7 @@ function handleFormSubmission(countToInput) {
   }
 }
 
+// New event listener for for window load
 window.addEventListener("load", function () {
   let reverseBtn = document.querySelector("button#reverse");
   let countToInput = document.getElementById("userInput");
