@@ -47,11 +47,11 @@ function beepBoopRoger(countToInput) {
 }
 
 //UI logic
-function reserverFormSubmission(countToInput) {
+function handleReserverFormSubmission(countToInput) {
   let reverseResults = reverseArray(countToInput.value);
-  let reverseResultsElement = document.querySelector("div#reversed");
-  reverseResultsElement.removeAttribute("class");
-  reverseResultsElement.innerText = reverseResults;
+  let divElement = document.querySelector("div#reversed");
+  divElement.removeAttribute("class");
+  divElement.innerText = reverseResults;
 }
 
 //UI logic
@@ -72,7 +72,7 @@ function handleFormSubmission(countToInput) {
   }
 }
 
-// New event listener for for window load
+// New event listener for when window load
 window.addEventListener("load", function () {
   let reverseBtn = document.querySelector("button#reverse");
   let countToInput = document.getElementById("userInput");
@@ -89,6 +89,6 @@ window.addEventListener("load", function () {
 
   // Event listener to reverse results of array values. when user clicks the reverse button
   reverseBtn.addEventListener("click", function () {
-    reserverFormSubmission(countToInput);
+    handleReserverFormSubmission(countToInput);
   });
 });
