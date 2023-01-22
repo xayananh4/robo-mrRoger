@@ -23,7 +23,7 @@ function beepBoopRoger(countToInput) {
   let arrayPopFromInput = populateArrayFromInput(countToInput);
   let newOutputArray = [];
 
-  if (arrayPopFromInput.length !== 0) {
+  if (arrayPopFromInput.length !== undefined) {
 
     arrayPopFromInput.forEach(function (element) {
       if (element.toString().includes(3)) {
@@ -41,9 +41,7 @@ function beepBoopRoger(countToInput) {
     });
     return newOutputArray.join(" ");
   }
-  else {
-    return null;
-  }
+  return false;
 }
 
 //UI logic
